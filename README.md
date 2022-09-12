@@ -13,9 +13,12 @@ Set up automation test framework.
 ## Screenshots
 
 ## Installation
+technologies used include Python, Unittest, Selenium, POM, batch script, and MySQL. THe User will need to have python, unittest, selenium, and mysql installed
+
 
  ## Usage 
  
  ### Authors
+ Ann-Marie Orozco
  
  
