@@ -30,7 +30,7 @@ time.sleep(3)
 print(f"Number of links list = {len(list)}")
     
 # get all details
-alldetail[]
+alldetail = []
 for idx, i in enumerate(list):
   print(f" {idx}")
   # i is the href from above
@@ -59,7 +59,7 @@ for idx, i in enumerate(list):
   alldetails.append(tempJ)
   
 # write to csv
-csv_columns = ['column1, column2, column3]
+csv_columns = ['column1, column2, column3']
 try:
   with open(csv_file, 'w') as csvfile:
     thewriter = csv.DictWriter(csvfile, fieldnames=csv_columns)

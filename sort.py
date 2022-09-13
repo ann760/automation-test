@@ -25,6 +25,6 @@ for i in columns:
     last_row.append(i.text)
     
   # confirm sort
-  print(f"The first row is {first_row{idx]} and the last row is {last_row{idx}}"
+  print(f"The first row is {first_row[idx]} and the last row is {last_row[idx]}")
   self.assertTrue(first_row[idx] <= last_row[idx])
   
