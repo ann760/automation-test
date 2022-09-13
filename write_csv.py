@@ -6,7 +6,7 @@ while condition:
   ppp = list_el[0]
   # loop through displayed list
   for idx, ppp in enumerate(issue_list):
-    print(f " {idx]")
+    print(f" {idx}")
     ppp1 = ppp.find_elements_by_tag_name('a')[-1]
     list.append(ppp1.get_property('href'))
   # get the next page
@@ -39,17 +39,17 @@ for idx, i in enumerate(list):
   time.sleep(5)
   
   try:
-    column1 = delay.until(EC.presence_of_element_location((By.XPATH, "//*id='element-id))).text
+    column1 = delay.until(EC.presence_of_element_location((By.XPATH, "//*id='element-id"))).text
   except TimeoutException:
     column1 = 'None'
                                      
   try:
-    column2 = delay.until(EC.presence_of_element_location((By.XPATH, "//*id='element-id))).text
+    column2 = delay.until(EC.presence_of_element_location((By.XPATH, "//*id='element-id"))).text
   except TimeoutException:
     column2 = 'None'
   
   try:
-    column3 = delay.until(EC.presence_of_element_location((By.XPATH, "//*id='element-id))).text
+    column3 = delay.until(EC.presence_of_element_location((By.XPATH, "//*id='element-id"))).text
   except TimeoutException:
     column3 = 'None'
   
@@ -62,8 +62,8 @@ for idx, i in enumerate(list):
 csv_columns = ['column1, column2, column3]
 try:
   with open(csv_file, 'w') as csvfile:
-  thewriter = csv.DictWriter(csvfile, fieldnames=csv_columns)
-  thewrither.writeheader()
+    thewriter = csv.DictWriter(csvfile, fieldnames=csv_columns)
+    thewrither.writeheader()
   
   for issue in alldetails:
       thewriter.writerow(issue)
