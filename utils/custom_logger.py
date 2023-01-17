@@ -9,7 +9,7 @@ print(filename)
 class log_gen:
   @staticmethod
   def logen(__name__):
-    logger = logging.getLogger(__name))
+    logger = logging.getLogger(__name)
     logger.setLevel(logging.INFO)
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - %(message)s')
     
