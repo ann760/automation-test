@@ -1,2 +1,3 @@
-geckodriver.exe
-msedgedriver.exe
+drivers
+logs
+.vscode
