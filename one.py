@@ -12,7 +12,8 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-from selenium.webdriver.edge.service import Service
+from selenium.webdriver.edge.service import Service as eService
+from selenium.webdriver.edge.options import Options as eOptions
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -25,32 +26,34 @@ import os
 import time
 
 
-PATH = r'C:/Users/annie/Documents/code/drivers/chromedriver.exe'
-# driver = webdriver.Edge(PATH)
+# # start edge browser
+# user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)'
+# edge_driver_path = os.path.join(os.getcwd(), 'msedgedriver.exe')
+# edge_service = eService(edge_driver_path)
+# edge_options = eOptions()
+# edge_options.add_argument(f'user=agent={user_agent}')
+# driver = webdriver.Edge(service=edge_service, options=edge_options)
+# driver.maximize_window()
 
-# driver = webdriver.Edge(r'C:/Users/annie/Documents/code/drivers/msedgedriver.exe')
-
-
-# options = Options()
-# options.binary_location = r"C:/Users/annie/Documents/code/drivers/msedgedriver.exe"
-# driver = webdriver.Edge(options = options)
-
-
+# start chrome browser
 options = webdriver.ChromeOptions()
 options.add_argument("start-maximized")
 options.add_experimental_option('excludeSwitches', ['enable-logging'])
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 
-#Log in to insta
+# use getpadd
 # my_password = getpass.getpass("What is your password?")
+
+# navigate to google
 driver.get("https://www.google.com/")
 print(driver.title)
 
+# search for cats
 search_field = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.NAME, 'q')))
 search_field.clear()
 search_field.send_keys("cats")
+search_field.send_keys(Keys.ENTER)
 
-login = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.NAME, 'btnk'))).click()
-time.sleep(5)
+time.sleep(15)
 # driver.quit()
